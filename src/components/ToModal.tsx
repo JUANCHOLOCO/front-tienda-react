@@ -5,15 +5,18 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { Product } from "../types/Product"
+import { CardMedia } from '@mui/material';
 
 interface Props {
 
     open: boolean
     handleClose: () => void
+    product: Product
     };
   
 
-export default function ToModal({open, handleClose}: Props) {
+export default function ToModal({open, handleClose,product}: Props) {
  
 
   return (
@@ -25,19 +28,27 @@ export default function ToModal({open, handleClose}: Props) {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {"Use Google's location service?"}
+          {product.title}
         </DialogTitle>
+        <CardMedia    
+        sx={{ height: 200}}
+        component={'img'}
+        image={product.image}
+        title={product.image}
+        style={{
+          width: '200',
+          height: '200',
+          objectFit: "contain",
+        }}
+        alt='green iguana'
+      />
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Let Google help apps determine location. This means sending anonymous
-            location data to Google, even when no apps are running.
+            <p>{product.description}</p>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose} autoFocus>
-            Agree
-          </Button>
+          <Button onClick={handleClose}>Cerrar</Button>
         </DialogActions>
       </Dialog>
     </React.Fragment>

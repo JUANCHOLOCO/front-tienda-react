@@ -10,8 +10,15 @@ import {  Stack } from '@mui/material';
 import ToBtnAction from './ToBtnAction';
 import { useState } from 'react';
 import ToModal from './ToModal';
+import { Product } from '../types/Product';
 
-export default function ToCard() {
+interface Props {
+  item: Product
+}
+
+export default function ToCard({item}:Props) {
+
+  
 
   const [isCheck, setValor] =useState(true)
 
@@ -33,7 +40,7 @@ export default function ToCard() {
     <>
     
     
-    <Card sx={{ maxWidth: 345}}>
+    <Card sx={{ maxWidth: 345, height:500}}>
       <Stack direction='row' m={2} spacing={2}>
       <ToChip/>
       </Stack>
@@ -41,8 +48,8 @@ export default function ToCard() {
       <CardMedia    
         sx={{ height: 200}}
         component={'img'}
-        image="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-        title="green iguana"
+        image={item.image}
+        title={item.image}
         style={{
           width: '200',
           height: '200',
@@ -51,13 +58,12 @@ export default function ToCard() {
         alt='green iguana'
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
+        <Typography gutterBottom variant="h6" component="div">
+          <p>{item.title}</p>
         </Typography>
         
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+      
         <ToRating/>
         </Typography>
       </CardContent>
@@ -69,7 +75,7 @@ export default function ToCard() {
         <ToBtnAction isCheck={isCheck} handleCheck={handleCheck}/>
       </CardActions>
     </Card>
-    <ToModal open={open} handleClose={handleClose}/>
+    <ToModal open={open} handleClose={handleClose} product={item}/>
     </>
   );
 }
