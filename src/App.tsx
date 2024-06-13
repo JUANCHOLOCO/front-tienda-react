@@ -1,20 +1,23 @@
-import {ThemeProvider} from '@mui/material'
-import { theme } from './styles/Themes';
-import { BrowserRouter as Router} from 'react-router-dom'
-import Rutas from './routers/Rutas';
+import { SnackbarProvider } from 'notistack';
+import { BrowserRouter } from 'react-router-dom';
+import { ModalItem, ModalLogin } from './components';
+import { SnackbarUtilitiesCongifurator } from './helpers/snackbar.manager';
+import { AppRouter } from './routes';
+import { AppTheme } from './theme';
 
-
-
-const App = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <Router>
-        <Rutas/>
-      </Router>
-      
-    </ThemeProvider>
-  )
-}
-
-export default App
-
+export const App = () => {
+    return (
+        <>
+            <SnackbarProvider maxSnack={2}>
+                <SnackbarUtilitiesCongifurator />
+                <BrowserRouter>
+                    <AppTheme>
+                        <AppRouter />
+                        <ModalItem />
+                        <ModalLogin />
+                    </AppTheme>
+                </BrowserRouter>
+            </SnackbarProvider>
+        </>
+    );
+};
