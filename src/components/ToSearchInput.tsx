@@ -54,7 +54,7 @@ export const SearchInput = () => {
                         alignItems: 'center',
                     }}
                 >
-                    <Search sx={{ fontSize: 24 }} color="primary" />
+                    <Search sx={{ fontSize: 24 }} color="inherit" />
                 </Box>
             </Box>
         </Box>

@@ -211,10 +211,10 @@ export const MuiCard = ({ product }: { product: Product }) => {
                         fontWeight: 'bold',
                         borderRadius: '6px',
                         alignItems: 'center',
-                        bgcolor: '#44a036',
+                        bgcolor: '#DC24EE',
                         paddingX: 1,
                         ':hover': {
-                            bgcolor: '#2f8a2f',
+                            bgcolor: '#752576',
                             cursor: 'pointer',
                         },
                     }}
@@ -226,7 +226,7 @@ export const MuiCard = ({ product }: { product: Product }) => {
                             color: 'white',
                         }}
                     />
-                    <Typography>Add Cart</Typography>
+                    <Typography>Comprar</Typography>
                 </Box>
             </Card>
         </Grid>

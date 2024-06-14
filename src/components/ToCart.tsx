@@ -3,7 +3,7 @@ import { Badge, Box, Button, Popover, Typography } from '@mui/material';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../store/cart';
-import { TableCart } from './TableCart';
+import { TableCart } from './ToTableCart';
 
 export const Cart = () => {
     const cart = useCart((state) => state.cart);

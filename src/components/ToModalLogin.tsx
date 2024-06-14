@@ -8,9 +8,11 @@ import {
     Modal,
     TextField,
     Typography,
+    CardMedia
 } from '@mui/material';
 import { useState } from 'react';
 import { useEvents } from '../store';
+import logo from '/logo.png';
 
 export const ModalLogin = () => {
     const [singUp, setSignUp] = useState(false);
@@ -58,6 +60,21 @@ export const ModalLogin = () => {
                         </Box>
                         {singUp ? (
                             <Box id="singUp">
+                                <CardMedia
+                                    sx={{
+                                    height: 150,
+                                    }}
+                                            
+                                    component="img"
+                                    image={logo}
+                                    alt="login"
+                                    title="login"
+                                    style={{
+                                        width: "50",
+                                        height: "50",
+                                        objectFit: "contain",
+                                    }}
+                                    />
                                 <Typography variant={'h5'} mb={2}>
                                     Sign Up
                                 </Typography>
@@ -102,6 +119,21 @@ export const ModalLogin = () => {
                             </Box>
                         ) : (
                             <Box id="signIn">
+                                <CardMedia
+                                    sx={{
+                                    height: 150,
+                                    }}
+                                            
+                                    component="img"
+                                    image={logo}
+                                    alt="login"
+                                    title="login"
+                                    style={{
+                                        width: "50",
+                                        height: "50",
+                                        objectFit: "contain",
+                                    }}
+                                    />
                                 <Typography variant={'h5'} mb={2}>
                                     Sign In
                                 </Typography>

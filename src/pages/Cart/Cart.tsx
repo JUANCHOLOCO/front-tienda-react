@@ -24,7 +24,7 @@ export const Cart = () => {
     }, [cart]);
 
     useEffect(() => {
-        document.title = 'FakeStore - Cart';
+        document.title = 'MelanyStore - Cart';
     }, []);
     return (
         <Grid container gap={1}>
